@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+# editor swap files
+.*.kate-swp
+*~
+.*.sw?

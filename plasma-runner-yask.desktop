@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Steam Games
+Comment=Find and launch installed Steam games
+Icon=steam
+Type=Service
+X-KDE-ServiceTypes=Plasma/Runner
+X-KDE-PluginInfo-Author=johntr
+X-KDE-PluginInfo-Name=yask
+X-KDE-PluginInfo-Version=1.2
+X-KDE-PluginInfo-License=MIT
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=DBus2
+X-Plasma-DBusRunner-Service=io.github.johntr.yask
+X-Plasma-DBusRunner-Path=/runner
+X-Plasma-Request-Actions-Once=true
+X-Plasma-Runner-Syntaxes=:q:,steam :q:
+X-Plasma-Runner-Syntax-Descriptions=Finds installed Steam games matching :q:,Lists installed Steam games matching :q:
