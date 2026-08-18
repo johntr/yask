@@ -5,8 +5,9 @@ set -euo pipefail
 SERVICE="io.github.johntr.yask"
 DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 
-# match the absolute installed path so nothing else gets caught
-pkill -f "^${DATA_HOME}/yask/yask.py$" 2>/dev/null || true
+# the full install path is specific enough; anchoring with ^...$ would
+# never match, since the shebang makes the process "python3 /path/x.py"
+pkill -f "${DATA_HOME}/yask/yask.py" 2>/dev/null || true
 
 rm -rf "$DATA_HOME/yask"
 rm -f  "$DATA_HOME/krunner/dbusplugins/plasma-runner-yask.desktop"
