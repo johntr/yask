@@ -30,6 +30,10 @@ Exec=$RUNNER_DIR/yask.py
 SERVICE_EOF
 
 # Make the session bus notice the new activatable service without a re-login.
+# stop any running copy so an upgrade actually takes effect; D-Bus will
+# activate the new one on the next query
+pkill -f "^$RUNNER_DIR/yask.py$" 2>/dev/null || true
+
 dbus-send --session --dest=org.freedesktop.DBus --type=method_call \
     / org.freedesktop.DBus.ReloadConfig 2>/dev/null || true
 
